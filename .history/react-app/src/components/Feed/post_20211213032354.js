@@ -2,10 +2,12 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import "./post.css";
+import DisplayPostModal from "../User";
 import liked from './images/likes_filled_red.png'
 import like_empty from './images/likes.png'
 import comment from './images/comment.png'
 import { addLike } from "../../store/likes";
+import like_empty from "./images/likes.png"
 
 const Post = ({
   id,

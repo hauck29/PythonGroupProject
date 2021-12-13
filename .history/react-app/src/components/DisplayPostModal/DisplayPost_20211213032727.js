@@ -17,7 +17,7 @@ function DisplayPost({ postId, setShowModal }) {
   const [description, setDescription] = useState(post?.description);
   const dispatch = useDispatch();
   const post_likes = useSelector((state) => state.posts[postId]?.likes)
-  const total_likes = new Set(post_likes?.filter((like) => like[2] === true).map((like) => like[0]))
+  const total_likes = new Set(post_likes.filter((like) => like[2] === true).map((like) => like[0]))
 
   const handleEdit = async (id, description) => {
     dispatch(editPost(id, description));
@@ -50,10 +50,9 @@ function DisplayPost({ postId, setShowModal }) {
         <div id="post-modal-image-container">
           <div id="post-modal-image-wrapper">
             <div id="inner-div">
-              {post &&
               <img src={post["photos"]} alt=""
               className="display-photo"
-              ></img>}
+              ></img>
             </div>
           </div>
         </div>
@@ -63,13 +62,12 @@ function DisplayPost({ postId, setShowModal }) {
               <div id="profile-pic-holder">
                 <img id="profile-pic"
                 className="display-profile-pic"
-
-                src={post?.profile_image} alt=""></img>
+                src={post.profile_image} alt=""></img>
               </div>
             </div>
-            <div>{post?.username}</div>
+            <div>{post.username}</div>
             <div>
-              {post?.user_id === sessionUser?.id && (
+              {post.user_id === sessionUser.id && (
                 <button className="postBtn" onClick={() => isEditable(true)}>
                   Edit
                 </button>
@@ -93,7 +91,7 @@ function DisplayPost({ postId, setShowModal }) {
                   </button>
                 </div>
               )}
-              {post?.user_id === sessionUser?.id && (
+              {post.user_id === sessionUser.id && (
                 <button
                   className="postBtn"
                   onClick={() => handleDelete(postId)}
@@ -105,7 +103,7 @@ function DisplayPost({ postId, setShowModal }) {
           </div>
 
           <div className="right-column-div" id="post-description-edit">
-            {post?.description}
+            {post.description}
           </div>
 
           <div className="right-column-div" id="comments-row">
@@ -118,7 +116,7 @@ function DisplayPost({ postId, setShowModal }) {
 
           </div>
           <div className="right-column-div">
-            <CommentForm pid={post?.id} />
+            <CommentForm pid={post.id} />
           </div>
         </div>
       </div>

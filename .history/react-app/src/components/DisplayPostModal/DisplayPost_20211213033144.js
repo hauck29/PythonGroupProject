@@ -67,7 +67,7 @@ function DisplayPost({ postId, setShowModal }) {
                 src={post?.profile_image} alt=""></img>
               </div>
             </div>
-            <div>{post?.username}</div>
+            <div>{post.username}</div>
             <div>
               {post?.user_id === sessionUser?.id && (
                 <button className="postBtn" onClick={() => isEditable(true)}>
@@ -118,7 +118,7 @@ function DisplayPost({ postId, setShowModal }) {
 
           </div>
           <div className="right-column-div">
-            <CommentForm pid={post?.id} />
+            <CommentForm pid={post.id} />
           </div>
         </div>
       </div>

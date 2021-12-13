@@ -118,7 +118,7 @@ function DisplayPost({ postId, setShowModal }) {
 
           </div>
           <div className="right-column-div">
-            <CommentForm pid={post?.id} />
+            <CommentForm pid={post.id} />
           </div>
         </div>
       </div>

@@ -67,9 +67,9 @@ function DisplayPost({ postId, setShowModal }) {
                 src={post?.profile_image} alt=""></img>
               </div>
             </div>
-            <div>{post?.username}</div>
+            <div>{post.username}</div>
             <div>
-              {post?.user_id === sessionUser?.id && (
+              {post?.user_id === sessionUser.id && (
                 <button className="postBtn" onClick={() => isEditable(true)}>
                   Edit
                 </button>
@@ -93,7 +93,7 @@ function DisplayPost({ postId, setShowModal }) {
                   </button>
                 </div>
               )}
-              {post?.user_id === sessionUser?.id && (
+              {post.user_id === sessionUser.id && (
                 <button
                   className="postBtn"
                   onClick={() => handleDelete(postId)}
@@ -105,7 +105,7 @@ function DisplayPost({ postId, setShowModal }) {
           </div>
 
           <div className="right-column-div" id="post-description-edit">
-            {post?.description}
+            {post.description}
           </div>
 
           <div className="right-column-div" id="comments-row">
@@ -118,7 +118,7 @@ function DisplayPost({ postId, setShowModal }) {
 
           </div>
           <div className="right-column-div">
-            <CommentForm pid={post?.id} />
+            <CommentForm pid={post.id} />
           </div>
         </div>
       </div>
