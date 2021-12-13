@@ -5,7 +5,7 @@ import "./post.css";
 import DisplayPostModal from "../User";
 // import like from './images/likes.png'
 import liked from './images/likes_filled_red.png'
-import like_empty from './images/likes.png'
+import liked_empty from './images/likes.png'
 import comment from './images/comment.png'
 import { addLike } from "../../store/likes";
 

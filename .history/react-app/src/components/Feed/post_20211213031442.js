@@ -3,9 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import "./post.css";
 import DisplayPostModal from "../User";
-// import like from './images/likes.png'
+import like from './images/likes.png'
 import liked from './images/likes_filled_red.png'
-import like_empty from './images/likes.png'
 import comment from './images/comment.png'
 import { addLike } from "../../store/likes";
 
@@ -45,6 +44,11 @@ const like = (id, user_id) => {
   dispatch(addLike(id, sessionUser.id))
 };
 
+const unlike = (id) => {
+  dispatch(addUnlike(id))
+};
+
+
   return (
     <div className="post-box">
       {/* {showModal && (
@@ -63,7 +67,7 @@ const like = (id, user_id) => {
       <div className="description">{description}</div>
       <div className="post-icons">
 
-        {total_likes.has(sessionUser.id) ? <img src={liked} className="like-icon" ></img> : <img src={like_empty}
+        {total_likes.has(sessionUser.id) ? <img src={liked} className="like-icon" onChange={handleFile}></img> : <img src={like_empty}
       className="like-icon" onClick={() => like(id, user_id)}></img>}
       {/* <img src={liked} className="like-icon"></img> */}
         <img src={comment} className="comment-icon" onClick={showPost}></img>

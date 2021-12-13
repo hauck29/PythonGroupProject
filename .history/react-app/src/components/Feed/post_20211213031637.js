@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import "./post.css";
 import DisplayPostModal from "../User";
-// import like from './images/likes.png'
+import like from './images/likes.png'
 import liked from './images/likes_filled_red.png'
-import like_empty from './images/likes.png'
+import liked_empty 
 import comment from './images/comment.png'
 import { addLike } from "../../store/likes";
 

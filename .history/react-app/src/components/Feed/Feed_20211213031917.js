@@ -61,7 +61,7 @@ const Feed = () => {
                 profile_image={profile_image}
                 showPost={() => setShowModal(true)}
                 />
-            // </div>
+            </div>
             )
             )}
         </div>

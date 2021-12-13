@@ -19,7 +19,7 @@ const Feed = () => {
   const [showModal, setShowModal] = useState(false);
   const [postId, setPostId] = useState("");
 
-
+  
   // const photos = useSelector((state) => Object.values(state.photos));
   const handleClick = (id) => {
     setPostId(id);
@@ -49,7 +49,7 @@ const Feed = () => {
             photos,
             profile_image,
           }) => (
-            // <div onClick={() => handleClick(id)}>
+            <div onClick={() => handleClick(id)}>
               <Post
                 id={id}
                 user_id={user_id}
@@ -59,9 +59,9 @@ const Feed = () => {
                 comments={comments}
                 photos={photos}
                 profile_image={profile_image}
-                showPost={() => setShowModal(true)}
+                // openPost={handleClick}
                 />
-            // </div>
+            </div>
             )
             )}
         </div>
