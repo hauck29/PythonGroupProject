@@ -38,14 +38,24 @@
 }
 
 .following-feed-username {
-  width: 75px;
-  overflow: hidden;
+  /* max-width: 75px; */
+  /* overflow: hidden; */
   cursor: pointer;
+  /* text-overflow: ellipsis; */
 }
 
 .following-feed-username-link {
   display: flex;
   justify-content: center;
   font-size: .8em;
+  /* text-overflow: ellipsis;
+  max-width: 75px; */
+}
+
+.followee-username-span {
+  max-width:75px;
+  overflow:hidden;
+  /* display:inline-block;
+  color:red; */
   text-overflow: ellipsis;
 }
