@@ -4,7 +4,7 @@ import { createPost } from "../../store/posts";
 import { useDispatch, useSelector } from "react-redux";
 import './UploadModal.css'
 import logo from './images/instagramme_logo_black.png'
-import { Editor } from "@tinymce/tinymce-react";
+// import { Editor } from "@tinymce/tinymce-react";
 
 function DisplayForm({ preview, file, hideForm }) {
     const dispatch = useDispatch();
@@ -17,7 +17,6 @@ function DisplayForm({ preview, file, hideForm }) {
     const [errors, setErrors] = useState([]);
 
 
-console.log("&&&&&&&&&&&", sessionUser)
     const handleSubmit = (e) => {
         e.preventDefault();
         let newErrors = [];
@@ -62,14 +61,14 @@ console.log("&&&&&&&&&&&", sessionUser)
                     </div>
                     <div className="displayFormContainer">
 
-                        {/* <textarea
+                        <textarea
                         id="upload_display_textarea"
                         className="displayTextArea"
                         placeholder="Write a caption..."
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
-                        /> */}
-                        <Editor
+                        />
+                        {/* <Editor
                          id="upload_display_textarea"
                          className="displayTextArea"
                          placeholder="Write a caption..."
@@ -84,7 +83,7 @@ console.log("&&&&&&&&&&&", sessionUser)
                             menubar: false,
                             statusbar: false,
                         }}
-                        />
+                        /> */}
                     </div>
                     </div>
                 </div>
@@ -96,6 +95,9 @@ console.log("&&&&&&&&&&&", sessionUser)
         </div>
     </>
     )
+
+
+
 }
 
 export default DisplayForm

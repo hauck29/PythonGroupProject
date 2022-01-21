@@ -117,7 +117,7 @@
 
 .upload-form-main-display {
   height: 80vh;
-  width: 70vw;
+  width: 60vw;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -166,6 +166,7 @@
 
 .previewImage {
   height: 100%;
+  width: 100%;
   object-fit: cover;
 }
 
@@ -223,9 +224,9 @@
 }
 
 .displayTextArea {
-  width: 100%;
+  width: 95%;
   height: 100%;
-  padding: 0;
+  padding: 5% 0% 0% 5%;
   border: none;
 }
 
