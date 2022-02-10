@@ -21,7 +21,6 @@ def user(id):
     return user.to_dict()
 
 @user_routes.route('/<int:id>/posts')
-@login_required
 def get_user_posts(id):
     posts = Post.query.filter(Post.user_id == id).all()
     if posts:
@@ -30,7 +29,6 @@ def get_user_posts(id):
         return {}
 
 @user_routes.route('/<int:id>/followers')
-@login_required
 def get_followers(id):
     user = User.query.get(id).to_dict()
     followers = User.query.filter(User.id.in_(user["followers"])).all()
@@ -41,7 +39,6 @@ def get_followers(id):
 
 
 @user_routes.route('/<int:id>/following')
-@login_required
 def get_following(id):
     user = User.query.get(id).to_dict()
     following = User.query.filter(User.id.in_(user["following"])).all()
@@ -52,7 +49,6 @@ def get_following(id):
 
 # DELETE ONE FOLLOWER
 @user_routes.route('/<int:id>/followers/<int:followerId>', methods=["DELETE"])
-@login_required
 def delete_follower(id, followerId):
     user = User.query.get(id)
     follower = User.query.get(followerId)
@@ -63,7 +59,6 @@ def delete_follower(id, followerId):
 
 # UNFOLLOW ONE
 @user_routes.route('/<int:id>/following/<int:followedId>', methods=["DELETE"])
-@login_required
 def delete_followed(id, followedId):
     user = User.query.get(id)
     followed = User.query.get(followedId)
@@ -74,7 +69,6 @@ def delete_followed(id, followedId):
 
 # FOLLOW ONE
 @user_routes.route('/<int:id>/following/<int:followedId>', methods=["PUT"])
-@login_required
 def add_followed(id, followedId):
     user = User.query.get(id)
     followed = User.query.get(followedId)
