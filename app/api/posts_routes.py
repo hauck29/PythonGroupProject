@@ -1,5 +1,5 @@
 from flask import Blueprint, request, session, jsonify
-from flask_login import login_required, current_user
+from flask_login import login_required
 from app.models import Post, Photo, User, Comment, Like
 from wtforms.validators import DataRequired
 from app.forms.post_form import PostForm
@@ -41,9 +41,8 @@ def get_one_post(id):
 
 
 @posts_routes.route('/')
-@login_required
 def posts():
-    userId = current_user.id
+    userId = session['_user_id']
     user = User.query.get(userId).to_dict()
     results = Post.query.filter(Post.user_id.in_(
         user["following"])).order_by(Post.createdAt.desc()).all()
